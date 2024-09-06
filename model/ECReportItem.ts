@@ -9,7 +9,7 @@ export interface ECReportItem {
       | "Writing Competitions"
       | "Pre-College"
       | "Volunteering"
-      | "Competition"
+      | "Competitions"
       | "Internship"
       | "Research";
     recognition_level: string;

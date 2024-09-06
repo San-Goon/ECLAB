@@ -26,10 +26,12 @@
         width: 48%;
         height: 54px;
         line-height: 54px;
+        overflow:hidden;
     }
     .inactive {
         width: 48%;
         height: 54px;
         line-height: 54px;
+        overflow:hidden;
     }
 }

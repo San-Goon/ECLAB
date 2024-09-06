@@ -99,15 +99,28 @@ export default function Card({ item, index, type }: Props) {
           {item.ec_db.age_limit.join(", ")}
         </div>
         <div className={style.buttonsWrapper}>
-          {type === "student" ? <CardButton isAdded={item.is_added} /> : null}
-          <Link
-            className={style.visitButton}
-            href={item.ec_db.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Visit Website
-          </Link>
+          {type === "student" ? (
+            <>
+              <CardButton isAdded={item.is_added} />
+              <Link
+                className={style.visitButton}
+                href={item.ec_db.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Website
+              </Link>
+            </>
+          ) : (
+            <Link
+              className={style.visitButton2}
+              href={item.ec_db.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit Website
+            </Link>
+          )}
         </div>
       </div>
     </div>

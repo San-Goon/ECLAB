@@ -28,14 +28,19 @@
 }
 
 .disabled {
-    color: #FFFFFF;
     background: lightgray;
-    font-size: 18px;
-    font-weight: bold;
-    width: 240px;
-    height: 70px;
-    border-radius: 8px;
-    text-align: center;
-    line-height: 70px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        text-align: center;
+    }
+    .button {
+        width: 100vw;
+        height: 54px;
+        line-height: 54px;
+        border-radius: 0;
+    }
 }
 

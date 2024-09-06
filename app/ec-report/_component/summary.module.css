@@ -1,4 +1,4 @@
-.typeContainer {
+.typeContainerForPC {
     background: #e8d8fd;
     border-radius: 12px;
     padding: 12px;
@@ -7,15 +7,36 @@
 }
 
 .textWrapper {
-    line-height: 30px;
     display: flex;
+    align-items: center;
 }
 
-.textWrapper div {
-    width: 200px;
+.textWrapper strong {
+    margin: 0 12px;
 }
 
 .divider {
     border-left: 1px solid #B3B3B3;
     height: 59px
+}
+
+.typeContainerForMobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .typeContainerForPC {
+        display: none;
+    }
+    .typeContainerForMobile {
+        display: block;
+    }
+    .textWrapper {
+        width: 100%;
+        height: 64px;
+        background: #e8d8fd;
+        padding: 12px 60px;
+        margin-top: 12px;
+        border-radius: 10px;
+    }
 }

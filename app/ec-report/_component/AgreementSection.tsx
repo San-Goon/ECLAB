@@ -24,10 +24,10 @@ export default function AgreementSection() {
           checked={isChecked}
           onChange={handleClickCheckbox}
         />
-        I agree to the above
+        I agree to the above.
       </div>
       <div
-        className={isChecked ? style.button : style.disabled}
+        className={`${style.button} ${!isChecked ? style.disabled : ""}`}
         onClick={isChecked ? handleClickButton : undefined}
       >
         Send to Student

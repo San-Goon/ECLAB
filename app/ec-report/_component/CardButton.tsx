@@ -13,7 +13,7 @@ export default function CardButton({ isAdded }: Props) {
   }, []);
   return (
     <div
-      className={isAdded ? style.inActive : style.active}
+      className={isAdded ? style.inactive : style.active}
       onClick={isAdded ? undefined : handleClickButton}
     >
       {isAdded ? "already added!" : "add to EC List"}

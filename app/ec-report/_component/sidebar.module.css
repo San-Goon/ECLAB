@@ -28,3 +28,9 @@
     color: #9CA3AF;
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+}

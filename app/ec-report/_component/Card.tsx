@@ -22,6 +22,7 @@ export default function Card({ item, index, type }: Props) {
             <div className={style.index}>{index + 1}</div>
             <span>{item.ec_db.name}</span>
             <Link
+              className={style.link}
               href={item.ec_db.url}
               target="_blank"
               rel="noopener noreferrer"
@@ -29,14 +30,20 @@ export default function Card({ item, index, type }: Props) {
               <Image src={link} alt={""} />
             </Link>
           </div>
-          <div className={style.details}>
+          <div className={style.organization}>
             <div>{item.ec_db.organization}</div>
-            <div className={style.badge}>{item.ec_db.year}</div>
+            {type === "counselor" ? (
+              <div className={style.badge}>{item.ec_db.year}</div>
+            ) : null}
           </div>
         </div>
-        {type === "student" ? <CardButton isAdded={item.is_added} /> : null}
+        {type === "student" ? (
+          <div className={style.addButtonContainer}>
+            <CardButton isAdded={item.is_added} />
+          </div>
+        ) : null}
       </div>
-      <div className={style.lowerSection}>
+      <div className={style.lowerSectionForPC}>
         <div>
           <Image className={style.icon} src={filter_alt} alt={""} />
           <span>
@@ -58,6 +65,49 @@ export default function Card({ item, index, type }: Props) {
             <strong>ㆍAge: </strong>
             {item.ec_db.age_limit.join(", ")}
           </span>
+        </div>
+      </div>
+      <div className={style.lowerSectionForMobile}>
+        <div className={style.detailWrapper}>
+          <Image className={style.icon} src={filter_alt} alt={""} />
+          <strong>Type : </strong>
+          {item.ec_db.ec_type}
+        </div>
+        <div className={style.detailWrapper}>
+          <Image className={style.icon} src={filter_alt} alt={""} />
+          <strong>Participation : </strong>
+          {item.ec_db.participate_way.join(", ")}
+        </div>
+        <div className={style.detailWrapper}>
+          <Image className={style.icon} src={filter_alt} alt={""} />
+          <strong>Recognition : </strong>
+          {item.ec_db.recognition_level}
+        </div>
+        <div className={style.detailWrapper}>
+          <Image className={style.icon} src={library_add_check} alt={""} />
+          <strong>Nationality : </strong>
+          {item.ec_db.nationality}
+        </div>
+        <div className={style.detailWrapper}>
+          <Image className={style.icon} src={library_add_check} alt={""} />
+          <strong>Grade : </strong>
+          {item.ec_db.grade_limit.join(", ")}
+        </div>
+        <div className={style.detailWrapper}>
+          <Image className={style.icon} src={library_add_check} alt={""} />
+          <strong>Age : </strong>
+          {item.ec_db.age_limit.join(", ")}
+        </div>
+        <div className={style.buttonsWrapper}>
+          {type === "student" ? <CardButton isAdded={item.is_added} /> : null}
+          <Link
+            className={style.visitButton}
+            href={item.ec_db.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit Website
+          </Link>
         </div>
       </div>
     </div>

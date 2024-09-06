@@ -32,7 +32,7 @@ export default function Summary({ items }: Props) {
   return (
     <div>
       <strong>Total: {items.length}</strong>
-      <div className={style.typeContainer}>
+      <div className={style.typeContainerForPC}>
         <div>
           <div className={style.textWrapper}>
             <div>
@@ -82,6 +82,38 @@ export default function Summary({ items }: Props) {
             </div>
             {number.Research || "-"}
           </div>
+        </div>
+      </div>
+      <div className={style.typeContainerForMobile}>
+        <div className={style.textWrapper}>
+          <Image src={writing_competition} alt={""} />
+          <strong>Writing Competition</strong>
+          {number["Writing Competitions"] || "-"}
+        </div>
+        <div className={style.textWrapper}>
+          <Image src={competition} alt={""} />
+          <strong>Competition</strong>
+          {number.Competitions || "-"}
+        </div>
+        <div className={style.textWrapper}>
+          <Image src={pre_college} alt={""} />
+          <strong>Pre-College</strong>
+          {number["Pre-College"] || "-"}
+        </div>
+        <div className={style.textWrapper}>
+          <Image src={internship} alt={""} />
+          <strong>Internship</strong>
+          {number.Internship || "-"}
+        </div>
+        <div className={style.textWrapper}>
+          <Image src={volunteering} alt={""} />
+          <strong>Volunteering</strong>
+          {number.Volunteering || "-"}
+        </div>
+        <div className={style.textWrapper}>
+          <Image src={research} alt={""} />
+          <strong>Research</strong>
+          {number.Research || "-"}
         </div>
       </div>
     </div>

@@ -21,6 +21,7 @@ export default function AgreementSection() {
       <div className={style.agreementSection}>
         <input
           type="checkbox"
+          className={style.checkbox}
           checked={isChecked}
           onChange={handleClickCheckbox}
         />

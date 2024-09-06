@@ -14,7 +14,9 @@ type Props = {
 };
 
 export default function Summary({ items }: Props) {
-  const number = {
+  const number: {
+    [key: string]: number;
+  } = {
     "Writing Competitions": 0,
     Competitions: 0,
     "Pre-College": 0,
@@ -25,7 +27,7 @@ export default function Summary({ items }: Props) {
 
   items.forEach(({ ec_db }) => {
     const type = ec_db.ec_type.split("/")[0];
-    // @ts-ignore
+    if (type === "Pre-college") number["Pre-College"]++;
     number[type]++;
   });
 

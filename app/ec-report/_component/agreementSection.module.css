@@ -1,0 +1,40 @@
+.container {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.agreementSection {
+    margin: 24px 0 24px 0;
+}
+.agreementSection input {
+    margin-right: 10px;
+}
+
+.button {
+    color: #FFFFFF;
+    background: #3B3A48;
+    font-size: 18px;
+    font-weight: bold;
+    width: 240px;
+    height: 70px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    line-height: 70px;
+}
+
+.disabled {
+    color: #FFFFFF;
+    background: lightgray;
+    font-size: 18px;
+    font-weight: bold;
+    width: 240px;
+    height: 70px;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 70px;
+}
+

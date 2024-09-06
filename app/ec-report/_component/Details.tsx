@@ -4,12 +4,15 @@ import style from "./details.module.css";
 import Card from "@/app/ec-report/_component/Card";
 import AgreementSection from "@/app/ec-report/_component/AgreementSection";
 
+import Summary from "@/app/ec-report/_component/Summary";
+
 type Props = {
   response: Response;
 };
 
 export default async function Details({ response }: Props) {
   const { data } = response;
+
   return (
     <div className={style.container}>
       <div className={style.title}>
@@ -50,33 +53,7 @@ export default async function Details({ response }: Props) {
             <span>{data.delivered_dt}</span>
           </div>
         </div>
-        <strong>Total: 2</strong>
-        <div className={style.typeContainer}>
-          <div>
-            <p>
-              <strong>Writing Competition</strong>-
-            </p>
-            <p>
-              <strong>Competition</strong>-
-            </p>
-          </div>
-          <div>
-            <p>
-              <strong>Pre-Collage</strong>-
-            </p>
-            <p>
-              <strong>Internship</strong>-
-            </p>
-          </div>
-          <div>
-            <p>
-              <strong>Volunteering</strong>-
-            </p>
-            <p>
-              <strong>Research</strong>-
-            </p>
-          </div>
-        </div>
+        <Summary items={data.ec_report_items} />
         {data.ec_report_items.map((item, index) => {
           return <Card key={item.id} item={item} index={index} />;
         })}

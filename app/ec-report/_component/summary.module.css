@@ -1,0 +1,21 @@
+.typeContainer {
+    background: #e8d8fd;
+    border-radius: 12px;
+    padding: 12px;
+    margin-top: 12px;
+    display: flex;
+}
+
+.textWrapper {
+    line-height: 30px;
+    display: flex;
+}
+
+.textWrapper div {
+    width: 200px;
+}
+
+.divider {
+    border-left: 1px solid #B3B3B3;
+    height: 59px
+}

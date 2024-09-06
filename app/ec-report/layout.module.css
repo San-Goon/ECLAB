@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 20px;
+    background: #3B3A48;
+    color: white;
+}
+
+.header span {
+    margin-left: 30px;
+}
+
+.container {
+    display: flex;
+}

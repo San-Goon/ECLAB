@@ -1,6 +1,10 @@
 import { ReactNode } from "react";
 import Image from "next/image";
 
+import style from "./layout.module.css";
+import Sidebar from "@/app/ec-report/_component/Sidebar";
+import logo from "@/public/logo.png";
+
 type Props = {
   children: ReactNode;
 };
@@ -8,15 +12,15 @@ type Props = {
 export default function ReportLayout({ children }: Props) {
   return (
     <div>
-      <header style={{ display: "flex" }}>
+      <header className={style.header}>
         <div>
-          <Image src="/" alt="ECLAB로고" width={80} height={15} />
+          <Image src={logo} alt={""} />
           <span>EDU.CENTER</span>
         </div>
         <div>햄버거버튼</div>
       </header>
-      <div style={{ display: "flex" }}>
-        <div style={{ width: "300px", height: "1920px" }}>사이드바에용</div>
+      <div className={style.container}>
+        <Sidebar />
         {children}
       </div>
     </div>

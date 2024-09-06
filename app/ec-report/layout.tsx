@@ -12,7 +12,7 @@ type Props = {
 
 export default function ReportLayout({ children }: Props) {
   return (
-    <div>
+    <div className={style.wrapper}>
       <header className={style.header}>
         <div>
           <Image src={logo} alt={""} />

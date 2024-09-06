@@ -6,9 +6,21 @@
     display: flex;
 }
 
+.typeContainerForPC div {
+    width: 100%;
+}
+
 .textWrapper {
     display: flex;
     align-items: center;
+    width: 100%;
+    padding: 0 12px;
+}
+
+.textWrapper div {
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 .textWrapper strong {
@@ -17,7 +29,8 @@
 
 .divider {
     border-left: 1px solid #B3B3B3;
-    height: 59px
+    height: 59px;
+    max-width: 1px;
 }
 
 .typeContainerForMobile {

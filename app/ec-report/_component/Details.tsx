@@ -29,7 +29,9 @@ export default async function Details({ response, type }: Props) {
             <>
               <div className={style.infoTextWrapper}>
                 <strong>Student</strong>
-                <span>{data.student.name}</span>
+                <span>
+                  {data.student.name}({data.student.email})
+                </span>
               </div>
               <div className={style.infoTextWrapper}>
                 <strong>School</strong>

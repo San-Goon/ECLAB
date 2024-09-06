@@ -11,7 +11,7 @@
 }
 
 .detailsContainer {
-    width: 1024px;
+    min-width: 768px;
     background: #FFFFFF;
     padding: 16px;
     border-radius: 12px;

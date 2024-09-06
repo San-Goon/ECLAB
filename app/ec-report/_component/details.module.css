@@ -1,17 +1,36 @@
 .container {
+    background: #F5F5F5;
+    font-size: 16px;
+    padding: 32px;
 }
 
 .title {
 }
 
-.infoContainer {
+.detailsContainer {
+    background: #FFFFFF;
+    padding: 16px;
+    border-radius: 12px;
 }
 
-.infoWrapper {
+.infoContainer {
+    display: flex;
+    font-size: 18px;
+    line-height: 40px;
+    flex-wrap: wrap;
+}
+
+.infoTextWrapper {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .typeContainer {
-}
-
-.itemsContainer {
+    background: #9c52ff;
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
 }

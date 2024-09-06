@@ -20,11 +20,14 @@
     font-size: 18px;
     line-height: 40px;
     flex-wrap: wrap;
+    margin-bottom: 30px;
 }
 
 .infoTextWrapper {
     width: 50%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+}
+
+.infoTextWrapper strong {
+    width: 180px
 }

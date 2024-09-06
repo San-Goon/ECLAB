@@ -5,6 +5,7 @@ import Card from "@/app/ec-report/_component/Card";
 import AgreementSection from "@/app/ec-report/_component/AgreementSection";
 
 import Summary from "@/app/ec-report/_component/Summary";
+import dayjs from "dayjs";
 
 type Props = {
   response: Response;
@@ -12,7 +13,6 @@ type Props = {
 
 export default async function Details({ response }: Props) {
   const { data } = response;
-
   return (
     <div className={style.container}>
       <div className={style.title}>
@@ -46,11 +46,11 @@ export default async function Details({ response }: Props) {
           </div>
           <div className={style.infoTextWrapper}>
             <strong>Received Date</strong>
-            <span>{data.send_dt}</span>
+            <span>{dayjs(data.send_dt).format("MMM DD, YYYY")}</span>
           </div>
           <div className={style.infoTextWrapper}>
             <strong>Delivered Date</strong>
-            <span>{data.delivered_dt}</span>
+            <span>{dayjs(data.delivered_dt).format("MMM DD, YYYY")}</span>
           </div>
         </div>
         <Summary items={data.ec_report_items} />

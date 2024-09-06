@@ -32,6 +32,7 @@ npm run dev
 * middleware 를 사용해 /ec-report/student, /ec-report/counselor 를 제외한 주소로 접근시 /ec-report/student 로 접근하도록 구현하였습니다.
 * 모바일과 PC UI 간의 break point 는 768px 입니다.
 * 실제 학생과 관리자 페이지의 API 는 다를 수 있음을 감안하여 app 에서 api request 를 하도록 설계했습니다.
+* 현재 counselor 와 student 페이지 간 detail component 구분을 props 로 type 을 넘겨줌으로서 하고있는데, api 에 차이점이 생긴다면 그것으로 구분이 가능하는게 좋아보입니다.
 * Pre-college -> Pre-College 변환을 임시로 하드코딩 변환으로 해뒀는데 논의를 통해 맞춰나가야 하는 부분입니다. (추가 예외사항 처리 등)
 * active 된 버튼을 클릭 시 console 에 메시지가 표시되도록 했습니다.
 * figma 에 제공된 화면처럼 Delevered Date 가 비어있는 경우에 response 에서 어떻게 넘겨줄지 몰라 예외처리 하지 못했습니다.

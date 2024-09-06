@@ -14,6 +14,6 @@ export interface Student {
     status_type: "COMPLETED"; // COMPLETED 만 확인됨
     created_at: string;
     updated_at: string;
+    school: School;
   };
-  school: School;
 }

@@ -1,0 +1,22 @@
+.active {
+    width: 164px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-weight: bold;
+    background: #7A40F2;
+    color: #FFFFFF;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.inActive {
+    width: 164px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    color: #7A40F2;
+    font-weight: bold;
+    border: 1px solid #7A40F2;
+    border-radius: 10px;
+}

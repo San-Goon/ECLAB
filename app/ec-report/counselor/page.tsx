@@ -3,5 +3,5 @@ import { getInfo } from "@/app/ec-report/_lib/getInfo";
 
 export default async function Counselor() {
   const response = await getInfo();
-  return <Details response={response} />;
+  return <Details response={response} type="counselor" />;
 }

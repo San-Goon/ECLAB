@@ -9,9 +9,10 @@ import dayjs from "dayjs";
 
 type Props = {
   response: Response;
+  type: "student" | "counselor";
 };
 
-export default async function Details({ response }: Props) {
+export default async function Details({ response, type }: Props) {
   const { data } = response;
   return (
     <div className={style.container}>
@@ -24,41 +25,49 @@ export default async function Details({ response }: Props) {
             <strong>Title</strong>
             <span>{data.title}</span>
           </div>
-          <div className={style.infoTextWrapper}>
-            <strong>Student</strong>
-            <span>{data.student.name}</span>
-          </div>
-          <div className={style.infoTextWrapper}>
-            <strong>School</strong>
-            <span>{data.student.profile.school.name}</span>
-          </div>
-          <div className={style.infoTextWrapper}>
-            <strong>Grade</strong>
-            <span>{data.student.profile.grade}</span>
-          </div>
+          {type === "counselor" ? (
+            <>
+              <div className={style.infoTextWrapper}>
+                <strong>Student</strong>
+                <span>{data.student.name}</span>
+              </div>
+              <div className={style.infoTextWrapper}>
+                <strong>School</strong>
+                <span>{data.student.profile.school.name}</span>
+              </div>
+              <div className={style.infoTextWrapper}>
+                <strong>Grade</strong>
+                <span>{data.student.profile.grade}</span>
+              </div>
+            </>
+          ) : null}
           <div className={style.infoTextWrapper}>
             <strong>Counselor</strong>
             <span>{data.counselor.name}</span>
           </div>
-          <div className={style.infoTextWrapper}>
-            <strong>Status</strong>
-            <span>{data.ec_report_status}</span>
-          </div>
+          {type === "counselor" ? (
+            <div className={style.infoTextWrapper}>
+              <strong>Status</strong>
+              <span>{data.ec_report_status}</span>
+            </div>
+          ) : null}
           <div className={style.infoTextWrapper}>
             <strong>Received Date</strong>
             <span>{dayjs(data.send_dt).format("MMM DD, YYYY")}</span>
           </div>
-          <div className={style.infoTextWrapper}>
-            <strong>Delivered Date</strong>
-            <span>{dayjs(data.delivered_dt).format("MMM DD, YYYY")}</span>
-          </div>
+          {type === "counselor" ? (
+            <div className={style.infoTextWrapper}>
+              <strong>Delivered Date</strong>
+              <span>{dayjs(data.delivered_dt).format("MMM DD, YYYY")}</span>
+            </div>
+          ) : null}
         </div>
         <Summary items={data.ec_report_items} />
         {data.ec_report_items.map((item, index) => {
-          return <Card key={item.id} item={item} index={index} />;
+          return <Card key={item.id} item={item} index={index} type={type} />;
         })}
       </div>
-      <AgreementSection />
+      {type === "counselor" ? <AgreementSection /> : undefined}
     </div>
   );
 }

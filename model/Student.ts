@@ -11,7 +11,7 @@ export interface Student {
     grade: string;
     year_admission: string;
     nationality: string[];
-    status_type: "COMPLETED"; // COMPLETED 만 확인됨
+    status_type: string;
     created_at: string;
     updated_at: string;
     school: School;

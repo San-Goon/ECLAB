@@ -2,6 +2,7 @@ import { Response } from "@/model/Response";
 
 import style from "./details.module.css";
 import Card from "@/app/ec-report/_component/Card";
+import AgreementSection from "@/app/ec-report/_component/AgreementSection";
 
 export default function Details({ data }: Response) {
   return (
@@ -73,12 +74,7 @@ export default function Details({ data }: Response) {
         </div>
         <Card />
       </div>
-      <div>
-        Once sent, the report is final and cannot be retrieved. The counselor is
-        solely responsible for any incorrections in the report.
-        <div>I agree to the above</div>
-        <button>Send to Student</button>
-      </div>
+      <AgreementSection />
     </div>
   );
 }

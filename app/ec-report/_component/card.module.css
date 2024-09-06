@@ -21,12 +21,13 @@
     background: #7A40F2;
     width: 24px;
     height: 28px;
+    line-height: 28px;
     border-radius: 4px;
     text-align: center;
 }
 
 .details {
-    margin-left: 16px;
+    margin-left: 30px;
     line-height: 30px;
     margin-bottom: 16px;
 }
@@ -39,5 +40,20 @@
     border-radius: 12px;
     width: 56px;
     height: 23px;
+    line-height: 23px;
     text-align: center;
+}
+
+.lowerSection {
+    margin-top: 16px;
+}
+
+.lowerSection div {
+    display: flex;
+    align-items: center;
+    line-height: 35px;
+}
+
+.icon {
+    margin-right: 16px;
 }

@@ -1,40 +1,53 @@
 import style from "./card.module.css";
+import { ECReportItem } from "@/model/ECReportItem";
+import Image from "next/image";
+import link from "@/public/link.png";
+import filter_alt from "@/public/filter_alt.png";
+import library_add_check from "@/public/library_add_check.png";
+import Link from "next/link";
 
-export default function Card() {
+type Props = {
+  item: ECReportItem;
+  index: number;
+};
+
+export default function Card({ item, index }: Props) {
   return (
     <div className={style.container}>
       <div className={style.upperSection}>
         <div className={style.title}>
-          <div className={style.index}>1</div>
-          <span>Online 어쩌구</span>
-          <div>Icon</div>
+          <div className={style.index}>{index + 1}</div>
+          <span>{item.ec_db.name}</span>
+          <Link href={item.ec_db.url} target="_blank" rel="noopener noreferrer">
+            <Image src={link} alt={""} />
+          </Link>
         </div>
         <div className={style.details}>
-          <div>Young Arts</div>
-          <div className={style.badge}>2024</div>
+          <div>{item.ec_db.organization}</div>
+          <div className={style.badge}>{item.ec_db.year}</div>
         </div>
       </div>
       <div className={style.lowerSection}>
         <div>
-          <div>Icon</div>
+          <Image className={style.icon} src={filter_alt} alt={""} />
           <span>
             <strong>Type: </strong>
-            hi
+            {item.ec_db.ec_type}
             <strong>ㆍParticipation: </strong>
-            hi
+            {item.ec_db.participate_way.join(", ")}
             <strong>ㆍRecognition: </strong>
-            ho
+            {item.ec_db.recognition_level}
           </span>
         </div>
         <div>
-          <div>Icon</div>
+          <Image className={style.icon} src={library_add_check} alt={""} />
           <span>
             <strong>Nationality: </strong>
-            hi
+            {item.ec_db.nationality}
             <strong>ㆍGrade: </strong>
-            hi
+            {item.ec_db.grade_limit.join(", ")}
             <strong>ㆍAge: </strong>
-            ho
+            {item.ec_db.age_limit.join(", ")}
           </span>
         </div>
       </div>
